@@ -31,7 +31,13 @@ const BookCard = () => {
           <br />
           <strong  className='px-2  '>Author:</strong>{book.books.author}
           <br />
-          <strong className='px-2  '>Genre:</strong>{book.books.genre}
+          <strong className='px-2  '>Genre:</strong>
+          {book.books.genre.map((genre, index) => (
+            <span key={index}>
+              {genre}
+              {index !== book.books.genre.length - 1 ? ', ' : ''}
+            </span>
+          ))}
           <br />
           <strong className='px-2  '>Description:</strong>{book.books.description}
         </Card.Text>
